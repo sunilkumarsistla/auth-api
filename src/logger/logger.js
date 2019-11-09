@@ -1,0 +1,43 @@
+const { createLogger, format, transports } = require('winston');
+const config = require('./logger.config');
+
+const jsonFormat = format.json();
+const stringFormat = format.printf(({
+  label,
+  level,
+  timestamp,
+  message,
+}) => `${timestamp} [${label}] ${level}: ${message}`);
+
+const prepareFormat = (f) => format.combine(
+  format.label({ label: config.label }),
+  format.timestamp(),
+  f,
+);
+
+const winstonConfig = {
+  level: 'info',
+  transports: [],
+};
+
+switch (config.environment) {
+  case 'development':
+    winstonConfig.level = 'silly';
+    winstonConfig.transports.push(
+      new transports.Console({
+        format: prepareFormat(stringFormat),
+      }),
+    );
+    break;
+  default:
+    winstonConfig.transports.push(
+      new transports.File({
+        filename: `${config.path}/app.log`,
+        format: prepareFormat(jsonFormat),
+      }),
+    );
+    break;
+}
+
+const logger = createLogger(winstonConfig);
+module.exports = logger;

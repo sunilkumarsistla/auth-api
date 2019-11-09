@@ -2,14 +2,20 @@
   "name": "auth-api",
   "version": "1.0.0",
   "description": "authorization api used to create a context and maintain it. also responsible for maintaining the whole of bot-directline channel",
-  "main": "src/server.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon -r dotenv/config src/server.js",
-    "test": "test"
+    "start": "nodemon -r dotenv/config src/index.js",
+    "serve": "node -r dotenv/config src/index.js",
+    "lint": "node_modules/.bin/eslint src/** --fix",
+    "test": "node_modules/.bin/jest --coverage --watch",
+    "coverage": "node_modules/.bin/jest --coverage"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sunilkumarsistla/auth-api.git"
+  },
+  "_moduleAliases": {
+    "@components": "src"
   },
   "keywords": [
     "bot-framework",
@@ -28,10 +34,17 @@
   "homepage": "https://github.com/sunilkumarsistla/auth-api#readme",
   "dependencies": {
     "axios": "^0.19.0",
-    "nodemon": "^1.19.4",
-    "restify": "^8.4.0"
+    "dotenv": "^8.2.0",
+    "module-alias": "^2.2.2",
+    "restify": "^8.4.0",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.18.2",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.4"
   }
 }

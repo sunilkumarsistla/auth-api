@@ -4,3 +4,7 @@ npm-error.log
 yarn-error.log
 yarn-debug.log
 **/*.spec.js
+logs
+.eslintrc.yml
+.README
+.env
