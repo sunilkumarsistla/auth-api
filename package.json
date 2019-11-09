@@ -1,0 +1,28 @@
+{
+  "name": "auth-api",
+  "version": "1.0.0",
+  "description": "authorization api used to create a context and maintain it. also responsible for maintaining the whole of bot-directline channel",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunilkumarsistla/auth-api.git"
+  },
+  "keywords": [
+    "bot-framework",
+    "azure",
+    "directline",
+    "bot-channel",
+    "authorization",
+    "authentication",
+    "jwt"
+  ],
+  "author": "sunilkumarsistla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunilkumarsistla/auth-api/issues"
+  },
+  "homepage": "https://github.com/sunilkumarsistla/auth-api#readme"
+}
