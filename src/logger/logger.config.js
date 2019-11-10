@@ -4,4 +4,4 @@ const loggerConfiguration = {
   path: process.env.LOG_DIR,
 };
 
-module.exports = loggerConfiguration;
+export default loggerConfiguration;

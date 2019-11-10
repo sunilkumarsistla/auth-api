@@ -1,6 +1,6 @@
 const serverConfiguration = {
-  port: process.env.PORT || 8010,
+  port: process.env.PORT,
   server: process.env.APP_NAME,
 };
 
-module.exports = serverConfiguration;
+export default serverConfiguration;

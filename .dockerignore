@@ -1,10 +1,14 @@
-node_modules
 npm-debug.log
 npm-error.log
 yarn-error.log
 yarn-debug.log
 **/*.spec.js
-logs
+jest.config.js
 .eslintrc.yml
 .README
+.env.test
 .env
+logs
+__mocks__
+coverage
+node_modules

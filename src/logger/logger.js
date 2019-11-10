@@ -1,5 +1,5 @@
-const { createLogger, format, transports } = require('winston');
-const config = require('./logger.config');
+import { createLogger, format, transports } from 'winston';
+import config from './logger.config';
 
 const jsonFormat = format.json();
 const stringFormat = format.printf(({
@@ -22,6 +22,7 @@ const winstonConfig = {
 
 switch (config.environment) {
   case 'development':
+  case 'test':
     winstonConfig.level = 'silly';
     winstonConfig.transports.push(
       new transports.Console({
@@ -40,4 +41,4 @@ switch (config.environment) {
 }
 
 const logger = createLogger(winstonConfig);
-module.exports = logger;
+export default logger;

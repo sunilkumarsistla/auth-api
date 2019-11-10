@@ -4,18 +4,14 @@
   "description": "authorization api used to create a context and maintain it. also responsible for maintaining the whole of bot-directline channel",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon -r dotenv/config src/index.js",
-    "serve": "node -r dotenv/config src/index.js",
+    "start": "nodemon --exec yarn run serve",
+    "serve": "babel-node -r node_modules/dotenv/config src/index.js",
     "lint": "node_modules/.bin/eslint src/** --fix",
-    "test": "node_modules/.bin/jest --coverage --watch",
-    "coverage": "node_modules/.bin/jest --coverage"
+    "test": "node_modules/.bin/jest --config ./jest.config.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sunilkumarsistla/auth-api.git"
-  },
-  "_moduleAliases": {
-    "@components": "src"
   },
   "keywords": [
     "bot-framework",
@@ -33,13 +29,18 @@
   },
   "homepage": "https://github.com/sunilkumarsistla/auth-api#readme",
   "dependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/node": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
     "axios": "^0.19.0",
     "dotenv": "^8.2.0",
-    "module-alias": "^2.2.2",
     "restify": "^8.4.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-import-resolver-alias": "^1.1.2",

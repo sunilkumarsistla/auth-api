@@ -1,1 +1,3 @@
-module.exports = require('./logger');
+import logger from './logger';
+
+export default logger;
