@@ -5,7 +5,7 @@ ENV YARN_VERSION 1.19.1
 WORKDIR /app
 COPY . .
 
-RUN yarn
+RUN yarn --production
 
-CMD [ "node", "src/server.js" ]
+CMD [ "yarn", "run", "serve" ]
 EXPOSE 8010

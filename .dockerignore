@@ -6,8 +6,7 @@ yarn-debug.log
 jest.config.js
 .eslintrc.yml
 .README
-.env.test
-.env
+*.env
 logs
 __mocks__
 coverage
