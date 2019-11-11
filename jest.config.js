@@ -1,10 +1,10 @@
 require('dotenv').config({ path: './test.env' });
 
 module.exports = {
-  verbose: true,
+  clearMocks: true,
   timers: 'fake',
   moduleNameMapper: {},
-  collectCoverage: false,
+  collectCoverage: true,
   coverageThreshold: {
     global: {
       branches: 98,
