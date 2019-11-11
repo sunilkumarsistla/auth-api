@@ -1,6 +1,13 @@
 import winston from 'winston';
 
 describe('logger', () => {
+  beforeEach(() => {
+    console.log('before test count', winston.createLogger.mock.calls.length);
+    jest.resetModules();
+  });
+  afterEach(() => {
+    console.log('after test count', winston.createLogger.mock.calls.length);
+  });
   test('should create a console logger for development environment', () => {
     jest.mock('./logger.config', () => ({
       environment: 'development',
@@ -20,6 +27,7 @@ describe('logger', () => {
 
     expect(winston.createLogger).toHaveBeenCalledTimes(1);
     expect(winston.createLogger).toHaveBeenCalledWith({
+      env: 'development',
       level: 'silly',
       transports: [new winston.transports.Console()],
     });
@@ -37,6 +45,7 @@ describe('logger', () => {
 
     expect(winston.createLogger).toHaveBeenCalledTimes(1);
     expect(winston.createLogger).toHaveBeenCalledWith({
+      env: 'test',
       level: 'silly',
       transports: [new winston.transports.Console()],
     });
@@ -50,10 +59,11 @@ describe('logger', () => {
     }));
 
     const logger = require('./logger').default;
-    logger.info('test log');
+    logger.info('prod log');
 
     expect(winston.createLogger).toHaveBeenCalledTimes(1);
     expect(winston.createLogger).toHaveBeenCalledWith({
+      env: 'prod',
       level: 'silly',
       transports: [new winston.transports.File()],
     });

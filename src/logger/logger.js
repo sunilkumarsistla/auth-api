@@ -16,6 +16,7 @@ const prepareFormat = (f) => format.combine(
 );
 
 const winstonConfig = {
+  enc: config.environment,
   level: 'info',
   transports: [],
 };

@@ -17,7 +17,10 @@ const winston = {
     Console: jest.fn(),
     File: jest.fn(),
   },
-  createLogger: jest.fn().mockImplementation(() => ({ ...logger })),
+  createLogger: jest.fn().mockImplementation((c) => {
+    console.log('creating logger with conf', JSON.stringify(c));
+    return logger;
+  }),
 };
 
 module.exports = winston;
