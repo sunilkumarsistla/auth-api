@@ -1,25 +1,5 @@
 import winston from 'winston';
 
-jest.mock('winston', () => ({
-  format: {
-    json: jest.fn(),
-    label: jest.fn(),
-    timestamp: jest.fn(),
-    combine: jest.fn(),
-    printf: jest.fn(),
-  },
-  transports: {
-    Console: jest.fn(),
-    File: jest.fn(),
-  },
-  createLogger: jest.fn().mockImplementation(() => ({
-    info: jest.fn(),
-    debug: jest.fn(),
-    error: jest.fn(),
-    log: jest.fn(),
-  })),
-}));
-
 describe('logger', () => {
   test('should create a console logger for development environment', () => {
     jest.mock('./logger.config', () => ({
