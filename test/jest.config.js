@@ -5,6 +5,7 @@ module.exports = {
   timers: 'fake',
   moduleNameMapper: {},
   collectCoverage: true,
+  setupFiles: ['./jest.setup.js'],
   coverageThreshold: {
     global: {
       branches: 98,

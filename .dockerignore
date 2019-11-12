@@ -5,8 +5,9 @@ yarn-debug.log
 **/*.spec.js
 jest.config.js
 .eslintrc.yml
-.README
+README.md
+node_modules
 logs
+test
 __mocks__
 coverage
-node_modules

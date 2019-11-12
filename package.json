@@ -7,7 +7,7 @@
     "start": "nodemon --exec yarn run serve",
     "serve": "babel-node -r node_modules/dotenv/config src/index.js",
     "lint": "node_modules/.bin/eslint src/** --fix",
-    "test": "node_modules/.bin/jest --config ./jest.config.js"
+    "test": "node_modules/.bin/jest --config ./test/jest.config.js"
   },
   "repository": {
     "type": "git",

@@ -34,7 +34,7 @@ switch (config.environment) {
   default:
     winstonConfig.transports.push(
       new transports.File({
-        filename: `${config.path}/app.log`,
+        filename: `${config.path}/${config.label}.log`,
         format: prepareFormat(jsonFormat),
       }),
     );
