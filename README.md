@@ -4,6 +4,8 @@
 ```
 yarn
 yarn start (monitored)
+yarn test (collects coverage too: check jest.config.js for configuration)
+yarn lint (eslint rules and fixing)
 ```
 
 ## docker creation
